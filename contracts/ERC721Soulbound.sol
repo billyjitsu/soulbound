@@ -25,7 +25,7 @@ contract ERC721Soulbound is ERC721, BrightIDRegistry {
         string memory symbol
     ) ERC721(name, symbol) BrightIDRegistry(verifierToken, context) {
 
-        setBaseURI("BASEURI");
+        setBaseURI("ipfs://QmRte2aJTeFtwC6YjsVTseY2wigvc7dUU5TqugR2cTwcHX/1.json");
 
     }
 
@@ -61,7 +61,8 @@ contract ERC721Soulbound is ERC721, BrightIDRegistry {
 
     string memory currentBaseURI = _baseURI();
     return bytes(currentBaseURI).length > 0
-        ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
+        ? //string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
+        string(abi.encodePacked(currentBaseURI))
         : "";
     }
 

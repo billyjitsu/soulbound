@@ -4,7 +4,11 @@ const hre = require("hardhat");
 async function main() {
  
   const Soulbound = await hre.ethers.getContractFactory("ERC721Soulbound");
-  const soulbound = await Soulbound.deploy("constructor");
+  const soulbound = await Soulbound.deploy(
+    "0xE66a55EddDbEc1511Be72af68860b9Fa31854f65",
+    "0x3168697665000000000000000000000000000000000000000000000000000000",
+    "Soulbound",
+    "Soul");
 
   await soulbound.deployed();
 
